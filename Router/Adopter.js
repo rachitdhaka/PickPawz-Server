@@ -88,4 +88,21 @@ AdopterRouter.put('/editProfile', authMiddleware,  async (req, res) => {
     }
 })
 
+
+AdopterRouter.get('/getProfile'  , authMiddleware , async (req , res) => {
+
+    const Id = req.userId;
+    try {
+        const adopterData = await AdopterModel.findById({_id:Id}).select("-password -__v");
+        res.json({
+            adopterData
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            error: "Fetching Profile failed"
+        });
+    }
+})
+
 module.exports = AdopterRouter
