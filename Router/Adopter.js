@@ -72,11 +72,11 @@ AdopterRouter.post('/login', async (req, res) => {
 AdopterRouter.put('/editProfile', authMiddleware,  async (req, res) => {
 
     const Id = req.userId;
-    const { Profession,Description, Phone,Email,HouseFamily, ReasonToAdopt} = req.body;
+    const { profession, aboutMe, email, phone, city, state, reasonForAdoption, houseAndFamily } = req.body;
 
 
     try {
-        await AdopterModel.findByIdAndUpdate({_id:Id} , {Profession,Description, Phone,Email,HouseFamily, ReasonToAdopt});
+        await AdopterModel.findByIdAndUpdate({_id:Id} , { profession, aboutMe, email, phone, city, state, reasonForAdoption, houseAndFamily });
         res.json({
             message : "Profile Updated Successfully"
         })

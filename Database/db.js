@@ -23,22 +23,22 @@ const AdopterSchema = new Schema({
         type : String ,
         required : true ,
     },
-    Profession: {
+    profession: {
         type : String
     },
-    Description: {
+    aboutMe: {
         type : String
     },
-    Phone: {
+    phone: {
         type : String
     },
-    Email: {
+    email: {
         type : String
     },
-    HouseFamily: {
+    houseAndFamily: {
         type : String
     },
-    ReasonToAdopt: {
+    reasonForAdoption: {
         type : String
     },
     city: {
