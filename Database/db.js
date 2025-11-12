@@ -40,6 +40,12 @@ const AdopterSchema = new Schema({
     },
     ReasonToAdopt: {
         type : String
+    },
+    city: {
+        type : String
+    },
+    state: {
+        type : String
     }
 })
 
